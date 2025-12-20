@@ -1,6 +1,6 @@
 ---
-import HomeProjectCard from "./homeProyectCard.astro";
-import { proyectos } from "../../../data/projetsAboutData.js";
+import HomeProjectCard from "./homeProjectCard.astro";
+import { projects } from "../../../data/projectsAboutData.js";
 ---
 
 <section class="py-10 relative z-10">
@@ -11,11 +11,11 @@ import { proyectos } from "../../../data/projetsAboutData.js";
   </h2>
 
   <div class="mt-8 grid gap-6 md:grid-cols-2 max-w-[930px] mx-auto px-4">
-    {proyectos.map((p) => <HomeProjectCard {...p} />)}
+    {projects.map((p) => <HomeProjectCard {...p} />)}
   </div>
   <div class="mt-12 flex justify-center">
     <a
-      href="/proyectos"
+      href="/projects"
       class="px-6 py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-3xl transition-all duration-150
            drop-shadow-[2px_2px_0_#0debd8] active:translate-0.5 active:drop-shadow-none"
     >

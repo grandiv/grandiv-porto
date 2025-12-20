@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  titulo: string;
+  title: string;
 }
 
-const { titulo } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <section
@@ -16,7 +16,7 @@ const { titulo } = Astro.props;
     <h1
       class="text-4xl md:text-6xl font-extrabold mb-4 tracking-wide drop-shadow-lg text-shadow-cyan"
     >
-      {titulo}
+      {title}
     </h1>
   </div>
 </section>

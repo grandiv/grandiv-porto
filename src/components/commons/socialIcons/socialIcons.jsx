@@ -9,7 +9,7 @@ const SocialIcons = () => {
   return (
     <div className="my-5 flex items-center justify-center">
       <a
-        href="https://www.linkedin.com/in/Grandiv-rodr%C3%ADguez-collins-40505624a/"
+        href="https://www.linkedin.com/in/muhammad-grandiv-lava-putra-364b0324b/"
         target="_blank"
         rel="noopener noreferrer"
         className="mr-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
@@ -19,7 +19,7 @@ const SocialIcons = () => {
       </a>
 
       <a
-        href="https://github.com/Grandiv-R-collins"
+        href="https://github.com/grandiv"
         target="_blank"
         rel="noopener noreferrer"
         className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
@@ -28,7 +28,7 @@ const SocialIcons = () => {
         <FaGithub className="h-7 w-7" />
       </a>
 
-      <a
+      {/* <a
         href="https://x.com/Grandivdevelops/"
         target="_blank"
         rel="noopener noreferrer"
@@ -36,10 +36,10 @@ const SocialIcons = () => {
         aria-label="Twitter"
       >
         <FaXTwitter className="h-7 w-7" />
-      </a>
+      </a> */}
 
       <a
-        href="https://www.instagram.com/Grandivdevelops/"
+        href="https://www.instagram.com/grandiv_/"
         target="_blank"
         rel="noopener noreferrer"
         className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
