@@ -1,17 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MyPhoto from "../assets/img/grandivPhoto.jpg";
-import CopyMail from "../components/links/copyMail.jsx";
+import CopyEmail from "../components/contact/CopyEmail.jsx";
+import { siteContent } from "../data/contentData";
 
-const links = [
-  {
-    href: "https://www.linkedin.com/in/muhammad-grandiv-lava-putra-364b0324b/",
-    label: "LinkedIn",
-  },
-  { href: "https://github.com/grandiv", label: "GitHub" },
-  // { href: "https://x.com/Grandivdevelops/", label: "Twitter" },
-  { href: "mailto:grandivfarand@gmail.com", label: "Email" },
-];
+const { contact, hero, about } = siteContent;
 ---
 
 <Layout>
@@ -24,7 +17,7 @@ const links = [
           <!-- Photo with border -->
           <img
             src={MyPhoto.src}
-            alt="Foto de Grandiv"
+            alt={about.photoAlt}
             class="border-primary h-32 w-32 rounded-full shadow-lg"
           />
 
@@ -39,7 +32,7 @@ const links = [
               fill="none"></path>
             <text fill="#69c7c7" font-size="18" font-weight="bold">
               <textPath href="#circlePathText" startOffset="0%">
-                ✦ Hello! ✦ I'm available for new opportunities!
+                ✦ {hero.greeting}
               </textPath>
             </text>
           </svg>
@@ -47,12 +40,12 @@ const links = [
       </div>
     </div>
 
-    <CopyMail client:visible />
+    <CopyEmail client:visible />
 
     <!-- List of Links -->
     <div class="w-full max-w-xl space-y-4">
       {
-        links.map((link) => (
+        contact.links.map((link) => (
           <a
             href={link.href}
             target="_blank"

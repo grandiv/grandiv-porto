@@ -1,5 +1,8 @@
 ---
-import SocialIcons from "../socialIcons/socialIcons.jsx";
+import SocialIcons from "../social/SocialIcons.jsx";
+import { siteContent } from "../../../data/contentData";
+
+const { navigation, footer } = siteContent;
 ---
 
 <footer class="bg-gray-950 text-white">
@@ -11,7 +14,7 @@ import SocialIcons from "../socialIcons/socialIcons.jsx";
       <h3
         class="text-[#69c7c7] text-4xl font-bold drop-shadow-[1.5px_1.5px_0_#7836cf]"
       >
-        Grandiv
+        {navigation.logo}
       </h3>
     </a>
 
@@ -20,21 +23,15 @@ import SocialIcons from "../socialIcons/socialIcons.jsx";
       <ul
         class="flex flex-col items-center space-y-2 text-gray-400 lg:flex-row lg:items-start lg:space-y-0 lg:space-x-6"
       >
-        <li>
-          <a href="/" class="hover:text-[#552496] font-semibold">Home</a>
-        </li>
-        <li>
-          <a href="/Projects" class="hover:text-[#552496] font-semibold"
-            >Projects</a>
-        </li>
-        <li>
-          <a href="/Grandiv" class="hover:text-[#552496] font-semibold"
-            >About Me</a>
-        </li>
-        <li>
-          <a href="/links" class="hover:text-[#552496] font-semibold"
-            >Contact</a>
-        </li>
+        {
+          navigation.links.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-[#552496] font-semibold">
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
@@ -48,6 +45,6 @@ import SocialIcons from "../socialIcons/socialIcons.jsx";
   <div
     class="w-full border-t border-gray-600 py-10 text-center text-sm text-gray-500"
   >
-    grandivfarand@gmail.com
+    {footer.copyright}
   </div>
 </footer>

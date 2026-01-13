@@ -1,4 +1,6 @@
-export const jobs = [
+import type { Job } from "../types";
+
+export const jobs: Job[] = [
   {
     title: "Frontend Developer - Neowyze",
     time: ["12/2024 - 05/2025"],

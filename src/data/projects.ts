@@ -1,3 +1,4 @@
+import type { Project } from "../types";
 import imgNote from "../assets/img-projects/note-app.png";
 import urbanStyle from "../assets/img-projects/urbanStyle.png";
 import legalWeb from "../assets/img-projects/legalweb.webp";
@@ -6,7 +7,7 @@ import astroFit from "../assets/img-projects/Astrofit.jpg";
 import Verbenas from "../assets/img-projects/challenge-newyze.png";
 import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "PT Solusi Cerdas Sampah Indonesia (SolDas) ERP System",
     description:

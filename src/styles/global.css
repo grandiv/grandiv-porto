@@ -1,22 +1,29 @@
 @import "tailwindcss";
 
+/* ============================================
+   Theme Color Utilities
+   ============================================ */
+
+/* Primary color: Purple (#7836cf) */
 .primary {
   color: #7836cf;
 }
-.secondary {
-  color: #512092;
-}
 .bg-primary {
   background-color: #7836cf;
-}
-.bg-secondary {
-  background-color: #512092;
 }
 .text-primary {
   color: #7836cf;
 }
 
-/* hover rules (use these classes directly) */
+/* Secondary color: Dark Purple (#512092) */
+.secondary {
+  color: #512092;
+}
+.bg-secondary {
+  background-color: #512092;
+}
+
+/* Hover state utilities */
 .hover-text-secondary:hover {
   color: #7836cf;
 }
@@ -30,6 +37,7 @@
   color: #512092;
 }
 
+/* Text shadow utilities */
 .text-shadow {
   text-shadow: 2px 2px 0 #620deb;
 }
@@ -38,8 +46,7 @@
   text-shadow: 2px 2px 0 #0debd8;
 }
 
-/* home styles */
-
+/* Home page gradient animations */
 @keyframes gradientMove {
   0% {
     transform: translateX(0) translateY(0);
@@ -70,8 +77,4 @@
 
 .animate-gradientMove2 {
   animation: gradientMove2 8s ease-in-out infinite alternate;
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 0 #6d0deb;
 }

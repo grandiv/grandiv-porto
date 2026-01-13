@@ -1,14 +1,11 @@
 ---
 import { FiMenu, FiX } from "react-icons/fi";
-import NotificationBell from "./notificationBell.jsx";
+import NotificationBell from "./NotificationBell.jsx";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import { siteContent } from "../../../data/contentData";
 
-const links = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "About Me", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
+const { navigation } = siteContent;
+const links = navigation.links;
 ---
 
 <nav class="relative">
@@ -25,7 +22,7 @@ const links = [
         <h3
           class="text-[#69c7c7] text-3xl font-bold drop-shadow-[1.5px_1.5px_0_#7836cf]"
         >
-          Grandiv
+          {navigation.logo}
         </h3>
       </a>
 

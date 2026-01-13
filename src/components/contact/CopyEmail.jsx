@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
+import { siteContent } from "../../data/contentData";
 
 export default function EmailCopy() {
   const [copied, setCopied] = useState(false);
-  const email = "grandivfarand@gmail.com ";
+  const { email, messages } = siteContent.contact;
 
   const copyToClipboard = async () => {
     try {
@@ -11,7 +12,7 @@ export default function EmailCopy() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Error al copiar: ", err);
+      console.error(`${messages.copyError}: `, err);
     }
   };
 
@@ -23,7 +24,7 @@ export default function EmailCopy() {
         className="flex items-center gap-2 cursor-pointer font-bold rounded-md border-none  px-2 py-1 text-sm bg-primary hover:bg-secondary drop-shadow-[2px_2px_0_#0debd8]"
       >
         <FaRegCopy className="text-gray-300" />
-        {copied ? "Copiado!" : "Copiar"}
+        {copied ? messages.copied : messages.copy}
       </button>
     </div>
   );

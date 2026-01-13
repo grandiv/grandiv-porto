@@ -1,0 +1,133 @@
+---
+import { HiArrowRight } from "react-icons/hi";
+
+export interface Props {
+  title: string;
+  description?: string;
+  image: string;
+  technologies: string[];
+  demo: string;
+  code: string;
+  category?: string;
+  index?: number;
+  variant?: "compact" | "full"; // compact for homepage, full for projects page
+}
+
+const {
+  title,
+  description,
+  image,
+  technologies,
+  demo,
+  code,
+  category,
+  index,
+  variant = "full",
+} = Astro.props;
+
+const isCompact = variant === "compact";
+---
+
+<div
+  data-index={index}
+  data-category={category ?? ""}
+  class:list={[
+    "project-card group flex flex-col overflow-hidden rounded-xl bg-gray-900 border border-none transition-all drop-shadow-[4px_4px_0_#7836cf]",
+    isCompact
+      ? "w-full max-w-md mx-auto hover:scale-[1.015]"
+      : "z-10 w-[400px] shadow-lg lg:w-[320px] hover:scale-[1.01]",
+  ]}
+>
+  <img
+    src={image}
+    alt={`Image of project ${title}`}
+    class:list={[
+      "w-full object-cover rounded-2xl p-3",
+      isCompact ? "h-52" : "h-50",
+    ]}
+  />
+
+  <div class:list={["flex flex-col grow", isCompact ? "p-3" : "px-3 pb-3"]}>
+    <h3
+      class:list={[
+        "font-semibold text-white drop-shadow-[1px_1px_0_#7836cf]",
+        isCompact ? "text-lg mb-2" : "text-xl",
+      ]}
+    >
+      {title}
+    </h3>
+
+    <div
+      class:list={[
+        "flex flex-wrap gap-2",
+        isCompact ? "mb-4" : "my-1.5",
+      ]}
+    >
+      {
+        technologies.map((tech) => (
+          <span class="rounded-md bg-[#7836cf]/20 text-[#a27ed1] px-2 py-0.5 text-xs font-semibold">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+
+    {
+      description && !isCompact && (
+        <p class="flex grow text-gray-400">{description}</p>
+      )
+    }
+
+    <div class="mt-auto flex justify-between gap-3">
+      {
+        isCompact ? (
+          <>
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+            >
+              Demo
+            </a>
+            <a
+              href={code}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+            >
+              Code
+            </a>
+          </>
+        ) : (
+          <>
+            <a
+              class="group text-primary mt-6 flex items-center justify-start p-0 font-bold text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={demo}
+            >
+              Demo
+              <HiArrowRight
+                className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
+                size={18}
+              />
+            </a>
+            <a
+              class="group text-primary mt-6 flex items-center justify-start p-0 font-bold text-lg"
+              href={code}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <HiArrowRight
+                className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
+                size={18}
+              />
+            </a>
+          </>
+        )
+      }
+    </div>
+  </div>
+</div>

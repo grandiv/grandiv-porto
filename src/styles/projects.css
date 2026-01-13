@@ -1,22 +1,8 @@
-@keyframes gradientLava {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* ============================================
+   Project Filtering & Animation Styles
+   ============================================ */
 
-/* Animation for cards */
+/* Project card visibility states (used by projectFilter.js) */
 .project-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -31,13 +17,12 @@
   pointer-events: none;
 }
 
-/* Inactive filter buttons */
+/* Filter button states */
 .filter-btn {
   opacity: 0.4;
   transition: 0.18s ease;
 }
 
-/* Active button */
 .filter-btn.active {
   transform: scale(1.05);
   opacity: 1;

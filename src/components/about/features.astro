@@ -1,6 +1,14 @@
 ---
 import ServiceCard from "./ServiceCard.astro";
-import { FaLaptopCode, FaBolt, FaRocket } from "react-icons/fa"; 
+import { services } from "../../data/servicesData";
+import { FaLaptopCode, FaBolt, FaRocket } from "react-icons/fa";
+
+// Map icon names to actual icon components
+const iconMap = {
+  FaLaptopCode,
+  FaBolt,
+  FaRocket,
+};
 ---
 
 <section class="site-container mt-14 mx-auto max-w-6xl px-4">
@@ -12,21 +20,14 @@ import { FaLaptopCode, FaBolt, FaRocket } from "react-icons/fa";
 	</h2>
 
 	<div class="mt-10 grid gap-6 md:grid-cols-3">
-		<ServiceCard
-			icon={FaLaptopCode}
-			title="Responsive Web Development"
-			description="Building modern, mobile-adapted, optimized websites with current technologies."
-		/>
-		<ServiceCard
-			icon={FaBolt}
-			title="Frontend"
-			description="Developing modern, fast, and accessible interfaces that offer an intuitive and attractive user experience."
-		/>
-
-		<ServiceCard
-			icon={FaRocket}
-			title="Backend"
-			description="Fast performance, best accessibility practices, and server-side process optimization."
-		/>
+		{
+			services.map((service) => (
+				<ServiceCard
+					icon={iconMap[service.icon]}
+					title={service.title}
+					description={service.description}
+				/>
+			))
+		}
 	</div>
 </section>

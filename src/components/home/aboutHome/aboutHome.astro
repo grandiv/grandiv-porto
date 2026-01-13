@@ -1,6 +1,9 @@
 ---
 import { HiArrowRight } from "react-icons/hi";
 import MyPhoto from "../../../assets/img/grandivPhoto.jpg";
+import { siteContent } from "../../../data/contentData";
+
+const { about } = siteContent;
 ---
 
 <section class="relative flex items-center justify-center px-4 pt-16">
@@ -19,7 +22,7 @@ import MyPhoto from "../../../assets/img/grandivPhoto.jpg";
     >
       <img
         src={MyPhoto.src}
-        alt="Foto de Grandiv"
+        alt={about.photoAlt}
         class="h-full w-full object-cover"
       />
     </div>

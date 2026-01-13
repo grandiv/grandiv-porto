@@ -1,64 +1,139 @@
-// src/scripts/projectFilter.js
-(function () {
-  const VISIBLE_CLASS = "project-visible";
-  const HIDDEN_CLASS = "project-hidden";
-  const HIDE_TIMEOUT = 300;
+/**
+ * Project Filter Module
+ * Handles filtering and pagination of project cards
+ */
 
-  function initProjectFilter() {
-    const container = document.getElementById("projects-container");
-    const buttons = Array.from(document.querySelectorAll(".filter-btn"));
-    if (!container || !buttons.length) return;
+export class ProjectFilter {
+  constructor(config = {}) {
+    this.VISIBLE_CLASS = config.visibleClass || "project-visible";
+    this.HIDDEN_CLASS = config.hiddenClass || "project-hidden";
+    this.HIDE_TIMEOUT = config.hideTimeout || 300;
+    this.INITIAL_VISIBLE = config.initialVisible || 12;
 
-    const cards = Array.from(container.querySelectorAll("[data-categoria]"));
-    if (!cards.length) return;
+    this.itemsToShow = this.INITIAL_VISIBLE;
+    this.activeFilter = "all";
+    this.cards = [];
+    this.filterButtons = [];
+    this.loadMoreBtn = null;
+  }
 
-    function showCard(card) {
-      card.style.display = "flex";
-      requestAnimationFrame(() => {
-        card.classList.remove(HIDDEN_CLASS);
-        card.classList.add(VISIBLE_CLASS);
-      });
-    }
+  init() {
+    this.queryElements();
+    this.attachFilterEvents();
+    this.attachLoadMore();
+    this.applyFilter("all");
+  }
 
-    function hideCard(card) {
-      card.classList.remove(VISIBLE_CLASS);
-      card.classList.add(HIDDEN_CLASS);
-      setTimeout(() => {
-        if (card.classList.contains(HIDDEN_CLASS)) card.style.display = "none";
-      }, HIDE_TIMEOUT);
-    }
+  queryElements() {
+    this.cards = Array.from(document.querySelectorAll("[data-index]"));
+    this.filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+    this.loadMoreBtn = document.getElementById("load-more");
+  }
 
-    function applyFilter(filter) {
-      const normalized = filter.toLowerCase();
-      cards.forEach((card) => {
-        const categoria = (
-          card.getAttribute("data-categoria") ?? ""
-        ).toLowerCase();
-        const match = normalized === "all" || categoria === normalized;
-        match ? showCard(card) : hideCard(card);
-      });
-    }
+  showCard(card) {
+    card.style.display = "flex";
+    requestAnimationFrame(() => {
+      card.classList.remove(this.HIDDEN_CLASS);
+      card.classList.add(this.VISIBLE_CLASS);
+    });
+  }
 
-    function setActive(btn) {
-      buttons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
+  hideCard(card) {
+    card.classList.remove(this.VISIBLE_CLASS);
+    card.classList.add(this.HIDDEN_CLASS);
+    setTimeout(() => {
+      if (card.classList.contains(this.HIDDEN_CLASS)) {
+        card.style.display = "none";
+      }
+    }, this.HIDE_TIMEOUT);
+  }
 
-    buttons.forEach((btn) => {
+  setActiveButton(btn) {
+    this.filterButtons.forEach((b) => b.classList.remove("active"));
+    if (btn) btn.classList.add("active");
+  }
+
+  applyFilter(filter) {
+    this.activeFilter = filter ?? "all";
+    const normalized = this.activeFilter.toLowerCase();
+
+    // Re-query cards to ensure we have the latest DOM state
+    this.cards = Array.from(document.querySelectorAll("[data-index]"));
+
+    const filteredCards = this.cards.filter((card) => {
+      const category = (card.dataset.category ?? "").toLowerCase();
+      return normalized === "all" || category === normalized;
+    });
+
+    // Hide all cards first
+    this.cards.forEach((c) => this.hideCard(c));
+
+    // Show filtered cards up to itemsToShow
+    filteredCards.forEach((card, i) => {
+      if (i < this.itemsToShow) this.showCard(card);
+    });
+
+    // Update load more button visibility
+    this.updateLoadMoreButton(filteredCards.length);
+  }
+
+  updateLoadMoreButton(totalFiltered) {
+    if (!this.loadMoreBtn) return;
+    this.loadMoreBtn.style.display =
+      totalFiltered > this.itemsToShow ? "block" : "none";
+  }
+
+  attachFilterEvents() {
+    if (!this.filterButtons.length) return;
+
+    this.filterButtons.forEach((btn) => {
       btn.onclick = () => {
+        this.itemsToShow = this.INITIAL_VISIBLE;
         const filter = btn.dataset.filter || "all";
-        setActive(btn);
-        applyFilter(filter);
+        this.setActiveButton(btn);
+        this.applyFilter(filter);
       };
     });
 
+    // Activate "All" button at start
     const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-    if (allBtn) {
-      setActive(allBtn);
-      applyFilter("all");
-    }
+    this.setActiveButton(allBtn);
   }
 
-  document.addEventListener("astro:page-load", initProjectFilter);
-  window.addEventListener("load", initProjectFilter);
-})();
+  attachLoadMore() {
+    if (!this.loadMoreBtn) return;
+
+    this.loadMoreBtn.onclick = () => {
+      this.itemsToShow += this.INITIAL_VISIBLE;
+      this.applyFilter(this.activeFilter);
+    };
+  }
+
+  destroy() {
+    this.filterButtons.forEach((btn) => {
+      btn.onclick = null;
+    });
+    if (this.loadMoreBtn) {
+      this.loadMoreBtn.onclick = null;
+    }
+  }
+}
+
+// Singleton instance for easy usage
+let filterInstance = null;
+
+export function initProjectFilter(config = {}) {
+  // Clean up existing instance
+  if (filterInstance) {
+    filterInstance.destroy();
+  }
+
+  filterInstance = new ProjectFilter(config);
+  filterInstance.init();
+}
+
+// Auto-initialize on page load and Astro navigation
+if (typeof window !== "undefined") {
+  document.addEventListener("astro:page-load", () => initProjectFilter());
+  window.addEventListener("load", () => initProjectFilter());
+}

@@ -1,3 +1,7 @@
+---
+import { skills } from "../../data/skillsData";
+---
+
 <section class="site-container mt-14 mx-auto max-w-6xl px-4">
   <div class="site-container mt-14">
     <h2
@@ -11,20 +15,7 @@
   </div>
   <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
     {
-      [
-        { name: "HTML", icon: "html5" },
-        { name: "CSS", icon: "css3" },
-        { name: "JavaScript", icon: "javascript" },
-        { name: "TypeScript", icon: "typescript" },
-        { name: "Python", icon: "python" },
-        { name: "React", icon: "react" },
-        { name: "Astro", icon: "astro" },
-        { name: "Next.js", icon: "nextjs" },
-        { name: "Tailwind", icon: "tailwindcss" },
-        { name: "Node.js", icon: "nodejs" },
-        { name: "Express", icon: "express" },
-        { name: "Git", icon: "git" },
-      ].map((skill) => (
+      skills.map((skill) => (
         <div class="relative group">
           <div class="absolute inset-0 -z-10 rounded-lg  blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
 

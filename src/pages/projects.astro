@@ -1,10 +1,10 @@
 ---
 import "../styles/projects.css";
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/commons/hero/hero.astro";
-import ProjectCard from "../components/project/proyectCard.astro";
-import Banner from "../components/commons/banners/banner.astro";
-import { projects } from "../data/projectData.js";
+import Hero from "../components/common/hero/hero.astro";
+import ProjectCard from "../components/common/ProjectCard.astro";
+import Banner from "../components/common/banners/banner.astro";
+import { projects } from "../data/projects";
 ---
 
 <Layout title="Projects" description="Projects">
@@ -60,108 +60,12 @@ import { projects } from "../data/projectData.js";
   <Banner />
 </Layout>
 
-<script is:inline>
-(function () {
-  /* ---------------- CONFIG ---------------- */
-  const VISIBLE_CLASS = "project-visible";
-  const HIDDEN_CLASS = "project-hidden";
-  const HIDE_TIMEOUT = 300;
+<script>
+  import { initProjectFilter } from "../scripts/projectFilter.js";
 
-  const INITIAL_VISIBLE = 12;
-  let itemsToShow = INITIAL_VISIBLE;
-  let activeFilter = "all";
-  let cards = [];
-  let filterButtons = [];
-  let loadMoreBtn = null;
-
-  /* ---------------- HELPERS ---------------- */
-  function queryElements() {
-    cards = Array.from(document.querySelectorAll("[data-index]"));
-    filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
-    loadMoreBtn = document.getElementById("load-more");
-  }
-
-  function showCard(card) {
-    card.style.display = "flex";
-    requestAnimationFrame(() => {
-      card.classList.remove(HIDDEN_CLASS);
-      card.classList.add(VISIBLE_CLASS);
-    });
-  }
-
-  function hideCard(card) {
-    card.classList.remove(VISIBLE_CLASS);
-    card.classList.add(HIDDEN_CLASS);
-    setTimeout(() => {
-      if (card.classList.contains(HIDDEN_CLASS)) {
-        card.style.display = "none";
-      }
-    }, HIDE_TIMEOUT);
-  }
-
-  function setActiveButton(btn) {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    if (btn) btn.classList.add("active");
-  }
-
-  /* ---------------- FILTERING ---------------- */
-  function applyFilter(filter) {
-    activeFilter = filter ?? "all";
-    const normalized = activeFilter.toLowerCase();
-
-    cards = Array.from(document.querySelectorAll("[data-index]"));
-
-    const filteredCards = cards.filter((card) => {
-      const categoria = (card.dataset.categoria ?? "").toLowerCase();
-      return normalized === "all" || categoria === normalized;
-    });
-
-    cards.forEach((c) => hideCard(c));
-
-    filteredCards.forEach((card, i) => {
-      if (i < itemsToShow) showCard(card);
-    });
-
-    // show "load more" button only if there are more to see
-    if (!loadMoreBtn) return;
-    loadMoreBtn.style.display = filteredCards.length > itemsToShow ? "block" : "none";
-  }
-
-  /* ---------------- Filter events ---------------- */
-  function attachFilterEvents() {
-    if (!filterButtons.length) return;
-    filterButtons.forEach((btn) => {
-      btn.onclick = () => {
-        itemsToShow = INITIAL_VISIBLE; 
-        const filter = btn.dataset.filter || "all";
-        setActiveButton(btn);
-        applyFilter(filter);
-      };
-    });
-
-    // activate "All" at the start
-    const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-    setActiveButton(allBtn);
-  }
-
-  /* ---------------- Load more ---------------- */
-  function attachLoadMore() {
-    if (!loadMoreBtn) return;
-    loadMoreBtn.onclick = () => {
-      itemsToShow += INITIAL_VISIBLE; 
-      applyFilter(activeFilter); 
-    };
-  }
-
-  /* ---------------- INIT ---------------- */
-  function init() {
-    queryElements();
-    attachFilterEvents();
-    attachLoadMore();
-    applyFilter("all");
-  }
-
-  document.addEventListener("astro:page-load", init);
-  window.addEventListener("load", init);
-})();
+  // Initialize project filter with default config
+  initProjectFilter({
+    initialVisible: 12,
+    hideTimeout: 300,
+  });
 </script>

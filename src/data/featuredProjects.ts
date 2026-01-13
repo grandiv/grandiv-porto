@@ -1,8 +1,9 @@
+import type { Project } from "../types";
 import urbanStyle from "../assets/img-projects/urbanStyle.png";
 import imgNote from "../assets/img-projects/note-app.png";
 import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "React Shop",
     image: ReactEcommerce.src,
