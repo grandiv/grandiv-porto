@@ -5,24 +5,24 @@ import type { Service } from "../types";
 
 export const services: Service[] = [
   {
-    id: "responsive-web",
-    title: "Responsive Web Development",
+    id: "microservices",
+    title: "Microservices Architecture",
     description:
-      "Building modern, mobile-adapted, optimized websites with current technologies.",
+      "Designing and implementing scalable microservices platforms with Go and Node.js, featuring distributed systems, inter-service communication, and event-driven patterns.",
+    icon: "FaRocket",
+  },
+  {
+    id: "devops",
+    title: "DevOps & Infrastructure",
+    description:
+      "Building CI/CD pipelines with Docker, Kubernetes, and GitHub Actions. Managing production infrastructure with Nginx, Redis, Kafka, and achieving 99.9% uptime for high-traffic applications.",
     icon: "FaLaptopCode",
   },
   {
-    id: "frontend",
-    title: "Frontend",
+    id: "fullstack",
+    title: "Full-Stack Development",
     description:
-      "Developing modern, fast, and accessible interfaces that offer an intuitive and attractive user experience.",
+      "Creating end-to-end SaaS platforms with React, Next.js, TypeScript for frontend, and Node.js, PostgreSQL, MongoDB for backend. Implementing secure authentication, payment gateways, and comprehensive testing.",
     icon: "FaBolt",
-  },
-  {
-    id: "backend",
-    title: "Backend",
-    description:
-      "Fast performance, best accessibility practices, and server-side process optimization.",
-    icon: "FaRocket",
   },
 ];

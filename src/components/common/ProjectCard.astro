@@ -35,7 +35,7 @@ const isCompact = variant === "compact";
     "project-card group flex flex-col overflow-hidden rounded-xl bg-gray-900 border border-none transition-all drop-shadow-[4px_4px_0_#7836cf]",
     isCompact
       ? "w-full max-w-md mx-auto hover:scale-[1.015]"
-      : "z-10 w-[400px] shadow-lg lg:w-[320px] hover:scale-[1.01]",
+      : "z-10 w-100 shadow-lg lg:w-[320px] hover:scale-[1.01]",
   ]}
 >
   <img
@@ -82,26 +82,26 @@ const isCompact = variant === "compact";
       {
         isCompact ? (
           <>
-            <a
+            {/* <a
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
               class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
             >
               Demo
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href={code}
               target="_blank"
               rel="noopener noreferrer"
               class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
             >
               Code
-            </a>
+            </a> */}
           </>
         ) : (
           <>
-            <a
+            {/* <a
               class="group text-primary mt-6 flex items-center justify-start p-0 font-bold text-lg"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,8 +112,8 @@ const isCompact = variant === "compact";
                 className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
                 size={18}
               />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               class="group text-primary mt-6 flex items-center justify-start p-0 font-bold text-lg"
               href={code}
               target="_blank"
@@ -124,7 +124,7 @@ const isCompact = variant === "compact";
                 className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
                 size={18}
               />
-            </a>
+            </a> */}
           </>
         )
       }

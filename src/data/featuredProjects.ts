@@ -2,35 +2,54 @@ import type { Project } from "../types";
 import urbanStyle from "../assets/img-projects/urbanStyle.png";
 import imgNote from "../assets/img-projects/note-app.png";
 import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
+import roetixImg from "../assets/img-projects/roetix.png";
+import soldasImg from "../assets/img-projects/soldas.svg";
+import novagateImg from "../assets/img-projects/novagate.svg";
+import sampahJujurImg from "../assets/img-projects/sampahjujur.png";
 
 export const projects: Project[] = [
   {
-    title: "React Shop",
-    image: ReactEcommerce.src,
-    technologies: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "jwt"],
-    demo: "https://react-e-commerce-three-phi.vercel.app",
-    code: "https://github.com/Grandiv-R-collins/React-E-commerce.git",
+    title: "RoeTix - Event Ticketing Platform",
+    description:
+      "9-service microservices platform using Go and Node.js for high-traffic event ticketing with 99.9% uptime.",
+    image: roetixImg.src,
+    technologies: ["Go", "Node.js", "Redis", "Kafka", "Docker", "Nginx"],
+    demo: "https://roetix.com",
+    code: "https://github.com/grandiv",
   },
   {
-    title: "E-commerce Urban Style",
-    description: "Brief description of project 1.",
-    image: urbanStyle.src,
-    technologies: ["React", "Tailwind", "Firebase"],
-    demo: "https://proyecto-final-rodriguez-sable.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/ProyectoFinal-Rodriguez.git",
+    title: "PT SolDas ERP System",
+    description:
+      "Enterprise microservices platform with 8 services, Admin Dashboard with ReactFlow, and 82.75% test coverage.",
+    image: soldasImg.src,
+    technologies: ["Node.js", "TypeScript", "MongoDB", "React", "Redis"],
+    demo: "https://bsigunungputri.web.id",
+    code: "https://github.com/grandiv",
   },
   {
-    title: "Organization App",
-    image: imgNote.src,
-    technologies: ["React", "Tailwind", "Express", "MongoDB"],
-    demo: "https://front-react-todo.onrender.com",
-    code: "https://github.com/Grandiv-R-collins/Front-react-todo",
+    title: "NovaGate - Form & Landing Page Builder",
+    description:
+      "Full-stack SaaS platform with Next.js 15, drag-and-drop form builder with 18+ field types, and dual payment gateways.",
+    image: novagateImg.src,
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Docker"],
+    demo: "https://novagate.app",
+    code: "https://github.com/grandiv",
   },
   {
-    title: "REST API for Ecommerce",
-    image: "https://miro.medium.com/1*47S4iWVwTicFkFL4-Z4uAA.png",
-    technologies: ["Express", "Node.js", "MongoDB", "Mongoose"],
-    demo: "https://react-e-commerce-three-phi.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/ApiRest-Ecommerce.git",
+    title: "Sampah Jujur - Waste Management Marketplace",
+    description:
+      "Enterprise-grade Android two-sided marketplace connecting households with waste collectors for recyclable materials. Built with Jetpack Compose and MVVM + Clean Architecture, featuring hybrid Room + Firebase architecture for offline-first capabilities with 82% reduction in cloud reads. Implements real-time GPS tracking with 10-second location updates, Firebase authentication with Google Sign-In, real-time chat system, comprehensive analytics dashboards, and Cloudinary image management. Role: Location & Media Specialist in team of 3.",
+    image: sampahJujurImg.src,
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Firebase",
+      "Room Database",
+      "OpenStreetMap",
+      "Cloudinary",
+    ],
+    demo: "https://github.com/grandiv",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
   },
 ];

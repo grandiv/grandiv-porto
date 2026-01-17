@@ -5,7 +5,7 @@ import type { SiteContent } from "../types";
 
 export const siteContent: SiteContent = {
   navigation: {
-    logo: "Grandiv",
+    logo: "Grandiv Putra",
     links: [
       { name: "Home", href: "/" },
       { name: "Projects", href: "/projects" },
@@ -16,33 +16,36 @@ export const siteContent: SiteContent = {
 
   hero: {
     greeting: "Hello! I'm available for new opportunities!",
-    titles: ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
+    titles: ["Backend Engineer", "Full Stack Developer", "DevOps Engineer", "Software Architect"],
   },
 
   about: {
-    name: "Grandiv",
-    location: "Indonesia",
-    role: "full-stack software developer",
-    focus: ["back-end development", "user experience"],
+    name: "Muhammad Grandiv Lava Putra",
+    location: "Yogyakarta, Indonesia",
+    role: "Full-Stack Software Developer & Backend Engineer",
+    focus: ["microservices architecture", "system design", "DevOps engineering"],
     technologies: [
-      "React",
-      "Astro",
-      "JavaScript",
-      "TypeScript",
-      "Bootstrap",
-      "Tailwind",
-      "CSS",
+      "Go",
       "Node.js",
-      "Express.js",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "PostgreSQL",
       "MongoDB",
-      "MySQL",
+      "Redis",
+      "Kafka",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Nginx",
+      "Microservices",
     ],
     bio: [
-      "My interest in technology and programming emerged while pursuing a University Technical Degree in Automation at UnCuyo. In the computer science class I had my first contact with the world of programming.",
-      "Motivated by curiosity, I continued studying in a self-taught manner, then in a Technical Degree focused on software development, and decided that this was what I wanted to dedicate myself to at a professional level.",
-      "I'm always committed to constant growth and improvement in my skills, seeking to adapt to new technological advances and improve at both professional and personal levels.",
+      "I'm a Full-Stack Software Developer and Backend Engineer currently pursuing a Bachelor of Science in Information Technology at Gadjah Mada University (Expected 2026), with comprehensive coursework in Software Engineering, Data Engineering, Web Development, AI, Database Technology, and Data Structures & Algorithms.",
+      "I specialize in architecting scalable microservices platforms using Go and Node.js, with expertise in system design, CI/CD automation, and DevOps practices. My recent work includes building high-traffic event ticketing systems handling 1,000+ concurrent users with 99.9% uptime, implementing distributed systems with Redis, Kafka, and WebSocket, and achieving 82.75% test coverage across enterprise applications.",
+      "I'm passionate about building robust, production-ready systems with comprehensive documentation, automated testing, and modern development practices. I continuously seek to advance my skills in scalable architecture, cloud infrastructure, and emerging technologies.",
     ],
-    photoAlt: "Photo of Grandiv",
+    photoAlt: "Photo of Muhammad Grandiv Lava Putra",
   },
 
   contact: {

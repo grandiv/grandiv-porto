@@ -6,149 +6,118 @@ import mediCare from "../assets/img-projects/medicare.jpg";
 import astroFit from "../assets/img-projects/Astrofit.jpg";
 import Verbenas from "../assets/img-projects/challenge-newyze.png";
 import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
+import roetixImg from "../assets/img-projects/roetix.png";
+import soldasImg from "../assets/img-projects/soldas.svg";
+import novagateImg from "../assets/img-projects/novagate.svg";
+import compfestImg from "../assets/img-projects/compfest.jpg";
+import jogjaSmartTourImg from "../assets/img-projects/jogjasmarttour.png";
+import sampahJujurImg from "../assets/img-projects/sampahjujur.png";
+import wonderfulYogyakartaImg from "../assets/img-projects/WonderfulYogyakarta.jpg";
 
 export const projects: Project[] = [
   {
+    title: "RoeTix - Event Ticketing Platform for Rumah Orkestra Jogja",
+    description:
+      "9-service microservices platform using Go and Node.js for high-traffic event ticketing. Features CI/CD with GitHub Actions, Docker, Watchtower achieving zero-downtime deployments. Maintains 99.9% uptime with 1,000+ concurrent users.",
+    image: roetixImg.src,
+    technologies: ["Go", "Node.js", "Redis", "Kafka", "Docker", "Nginx"],
+    demo: "https://roetix.com",
+    code: "https://github.com/grandiv",
+    category: "backend",
+  },
+  {
     title: "PT Solusi Cerdas Sampah Indonesia (SolDas) ERP System",
     description:
-      "Enterprise microservices platform with independent services such as PresenceService, ProcedureService, AuthService, TaskService, FinanceService, InventoryService, etc.",
-    image: ReactEcommerce.src,
-    technologies: ["Express", "Docker", "K8S", "MongoDB"],
+      "Enterprise microservices platform with 8 independent services using Node.js, Express.js, MongoDB, and TypeScript. Features Admin Dashboard with ReactFlow workflow editor, Worker PWA with GPS tracking, and 82.75% test coverage with Jest.",
+    image: soldasImg.src,
+    technologies: ["Node.js", "TypeScript", "MongoDB", "React", "Redis"],
     demo: "https://bsigunungputri.web.id",
-    code: "https://github.com/Grandiv-R-collins/React-E-commerce.git",
-    category: "backend",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
+  },
+  {
+    title: "SonneTix - Event Ticketing Platform",
+    description:
+      "Microservices-based event ticketing platform in Node.js with RESTful APIs, PostgreSQL, and Zod validation. Integrated Midtrans payment gateway, JWT authentication, email verification, and enterprise-grade security features.",
+    image:
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+    technologies: ["Node.js", "PostgreSQL", "React", "Vite", "Midtrans"],
+    demo: "https://sonnetix.com",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
   },
   {
     title: "NovaGate - Form & Landing Page Builder Platform",
     description:
-      "Full-stack SaaS platform featuring dynamic form builder, landing page creator, custom subdomain system, and dual payment gateway integration.",
-    image: imgNote.src,
-    technologies: ["React", "Tailwind", "Express", "MongoDB"],
-    demo: "https://front-react-todo.onrender.com",
-    code: "https://github.com/Grandiv-R-collins/Front-react-todo",
+      "Full-stack SaaS platform using Next.js 15 with App Router, TypeScript, PostgreSQL, and Prisma ORM. Features drag-and-drop form builder with 18+ field types, custom subdomain routing, dual payment gateways (Tripay + Midtrans), and NextAuth.js v5 authentication.",
+    image: novagateImg.src,
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Docker"],
+    demo: "https://novagate.app",
+    code: "https://github.com/grandiv",
     category: "fullstack",
   },
   {
-    title: "E-commerce Urban Style",
+    title: "Jogja Smart Tour - AI-Powered Travel Planning Platform",
     description:
-      "Functional clothing and accessories e-commerce, with shopping cart, categories and payment gateway developed in React.",
-    image: urbanStyle.src,
-    technologies: ["React", "Tailwind", "Firebase"],
-    demo: "https://proyecto-final-rodriguez-sable.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/ProyectoFinal-Rodriguez.git",
+      "AI-powered travel planning web application for Yogyakarta tourism with automated itinerary generation using Azure OpenAI (DeepSeek-R1). Features interactive multi-style maps with Leaflet, smart chatbot assistant, comprehensive destination catalog with advanced filtering, Google OAuth authentication, and cost estimation breakdown. Deployed on Railway.app with Docker containerization and CI/CD via GitHub Actions.",
+    image: jogjaSmartTourImg.src,
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Azure OpenAI",
+      "PostgreSQL",
+      "Prisma",
+      "Docker",
+    ],
+    demo: "https://jogja-smart-tour-frontend-v1-production.up.railway.app",
+    code: "https://github.com/saaip7/jogja-smart-tour",
     category: "fullstack",
   },
   {
-    title: "Artisan Store",
+    title: "Sampah Jujur - Waste Management Marketplace",
     description:
-      "Full-Stack ecommerce to view, buy and sell your products, with login for users and sellers.",
-    image:
-      "https://i.pinimg.com/736x/c9/70/bf/c970bfbc24489e39418b2c1b1f8f74ef.jpg",
-    technologies: ["React", "Node", "Express", "MongoDB"],
-    demo: "https://c21-05-ft-node-react-mirror-frontend-64qbwssi2-muyvisual.vercel.app/",
-    code: "https://github.com/No-Country-simulation/c21-05-ft-node-react",
+      "Enterprise-grade Android two-sided marketplace connecting households with waste collectors for recyclable materials. Built with Jetpack Compose and MVVM + Clean Architecture, featuring hybrid Room + Firebase architecture for offline-first capabilities with 82% reduction in cloud reads. Implements real-time GPS tracking with 10-second location updates, Firebase authentication with Google Sign-In, real-time chat system, comprehensive analytics dashboards, and Cloudinary image management. Role: Location & Media Specialist in team of 3.",
+    image: sampahJujurImg.src,
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Firebase",
+      "Room Database",
+      "OpenStreetMap",
+      "Cloudinary",
+    ],
+    demo: "https://github.com/grandiv",
+    code: "https://github.com/grandiv",
     category: "fullstack",
   },
   {
-    title: "Income-Expense Tracker",
+    title: "FOREAL - Food Rescue and Allocation Mobile App",
     description:
-      "App that performs CRUD operations to add, view, edit and delete income/expenses.",
-    image:
-      "https://i.pinimg.com/736x/a4/85/c4/a485c4da3e78f4f518ddbcdb6637bacf.jpg",
-    technologies: ["React", "contextAPI"],
-    demo: "https://traker-gastos-ingresos.onrender.com/",
-    code: "https://github.com/Grandiv-R-collins/Traker-Gastos-Ingresos",
+      "Social impact Android application addressing UN SDG 2: Zero Hunger by connecting food donors with recipients and volunteers. Built with Kotlin and Firebase, featuring three-sided marketplace architecture, Google OAuth authentication, random donation matching algorithm, and real-time Firestore synchronization. Implements dynamic UI with custom popups for donation-recipient pairing, volunteer delivery selection, and comprehensive CRUD operations. Rapid MVP development completed in 10 days with team of 3 developers.",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop",
+    technologies: ["Kotlin", "Firebase", "Firestore", "Google OAuth", "Android"],
+    demo: "https://github.com/grandiv/FOREAL",
+    code: "https://github.com/grandiv/FOREAL",
+    category: "fullstack",
+  },
+  {
+    title: "Wonderful Yogyakarta - Interactive Tourism Website",
+    description:
+      "Award-winning tourism website for Web Development Competition 2024 showcasing Yogyakarta Special Region's 5 regions with advanced parallax scrolling using Framer Motion, glassmorphism UI, and smooth animations via AOS. Built with Next.js 14 App Router, Tailwind CSS, and Swiper carousel featuring interactive region navigation, modal-based destination galleries, and responsive design across mobile/tablet/desktop. Features custom typography, isometric platform design, and immersive storytelling. Lead developer in team of 3, responsible for core features, navbar implementation, and component architecture.",
+    image: wonderfulYogyakartaImg.src,
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Swiper"],
+    demo: "https://github.com/grandiv/wdc_n93_w3b",
+    code: "https://github.com/grandiv/wdc_n93_w3b",
     category: "frontend",
   },
   {
-    title: "Weather App",
+    title: "COMPFEST 16 AI Innovation Challenge - First Runner-Up",
     description:
-      "Application made with React that uses an API to display real-time weather.",
-    image: "https://i.pinimg.com/736x/10/6e/cd/106ecd1c3defb83ea0f87a334.jpg",
-    technologies: ["React", "contextAPI", "tailwind"],
-    demo: "https://app-clima-om19.onrender.com/",
-    code: "https://github.com/Grandiv-R-collins/app-clima",
-    category: "frontend",
-  },
-  {
-    title: "Legal Staff",
-    description:
-      "Website developed with Astro and Tailwind, marketing funnel for law firms.",
-    image: legalWeb.src,
-    technologies: ["Astro", "tailwind", "JavaScript"],
-    demo: "https://legal-staff.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/legal-staff",
-    category: "frontend",
-  },
-  {
-    title: "Medicare",
-    description:
-      "Website developed with Astro and Tailwind, marketing funnel for Health Insurance.",
-    image: mediCare.src,
-    technologies: ["Astro", "tailwind", "JavaScript"],
-    demo: "https://obra-social-landing.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/obra-social-landing.git",
-    category: "frontend",
-  },
-  {
-    title: "AstroFit",
-    description:
-      "Website developed with Astro and Tailwind, marketing funnel for fitness coaching.",
-    image: astroFit.src,
-    technologies: ["Astro", "tailwind", "JavaScript"],
-    demo: "https://gym-page-sandy.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/GymPage.git",
-    category: "frontend",
-  },
-  {
-    title: "REST API for Ecommerce",
-    description:
-      "RESTful API built with Node.js, Express and MongoDB to manage tasks with CRUD operations, user registration and JWT login.",
-    image: "https://miro.medium.com/1*47S4iWVwTicFkFL4-Z4uAA.png",
-    technologies: ["Express", "Node.js", "MongoDB", "Mongoose"],
-    demo: "https://react-e-commerce-three-phi.vercel.app/",
-    code: "https://github.com/Grandiv-R-collins/ApiRest-Ecommerce.git",
-    category: "backend",
-  },
-  {
-    title: "100 days coding in JS",
-    description: "100 projects, made with HTML, CSS and JavaScript.",
-    image:
-      "https://i.pinimg.com/736x/3b/4f/4e/3b4f4e170fcb1795b88f4941f49df0a2.jpg",
-    technologies: ["Next.js", "Tailwind", "GraphQL"],
-    demo: "https://one00-proyects-web.onrender.com/",
-    code: "https://github.com/Grandiv-R-collins/100-days-of-coding-in-JS",
-    category: "frontend",
-  },
-  {
-    title: "PlaniFy",
-    description:
-      "Web app to organize your projects, made with React + Vite, TypeScript and Tailwind for styling.",
-    image:
-      "https://i.pinimg.com/736x/8f/f0/bb/8ff0bbd0e5844ed254bede44522c8338.jpg",
-    technologies: ["React", "Vite", "TypeScript", "Tailwind"],
-    demo: "https://planify-1tu6.onrender.com/",
-    code: "https://github.com/Grandiv-R-collins/PlaniFy-organization-app",
-    category: "frontend",
-  },
-  {
-    title: "Verbenas Landscapes",
-    description:
-      "Static page developed with Astro and Tailwind as a challenge for a startup.",
-    image: Verbenas.src,
-    technologies: ["Astro", "Tailwind", "JavaScript"],
-    demo: "https://challenge-neowyze.onrender.com/",
-    code: "https://github.com/Grandiv-R-collins/challenge-Neowyze.git",
-    category: "frontend",
-  },
-  {
-    title: "REST API",
-    description:
-      "RESTful API built with Express and MongoDB to manage tasks with CRUD operations, user registration and JWT login.",
-    image: "https://miro.medium.com/1*47S4iWVwTicFkFL4-Z4uAA.png",
-    technologies: ["Express", "Node.js", "MongoDB", "Mongoose"],
-    demo: "https://back-express-todo.onrender.com",
-    code: "https://github.com/Grandiv-R-collins/Back-express-todo.git",
-    category: "backend",
+      "AI-driven SaaS web application that achieved second place against 300+ teams nationally. Features Vertex AI with Gemini model for content generation, YouTube and Unsplash API integrations, deployed on DigitalOcean and Google Cloud Run with CI/CD.",
+    image: compfestImg.src,
+    technologies: ["Next.js", "Node.js", "PostgreSQL", "Vertex AI", "Docker"],
+    demo: "https://compfest-ai.app",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
   },
 ];
