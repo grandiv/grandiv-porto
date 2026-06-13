@@ -6,19 +6,74 @@ import mediCare from "../assets/img-projects/medicare.jpg";
 import astroFit from "../assets/img-projects/Astrofit.jpg";
 import Verbenas from "../assets/img-projects/challenge-newyze.png";
 import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
-import roetixImg from "../assets/img-projects/roetix.png";
+import roetixImg from "../assets/img-projects/roetix.jpg";
 import soldasImg from "../assets/img-projects/soldas.svg";
 import novagateImg from "../assets/img-projects/novagate.svg";
 import compfestImg from "../assets/img-projects/compfest.jpg";
 import jogjaSmartTourImg from "../assets/img-projects/jogjasmarttour.png";
 import sampahJujurImg from "../assets/img-projects/sampahjujur.png";
 import wonderfulYogyakartaImg from "../assets/img-projects/WonderfulYogyakarta.jpg";
+import truckErpImg from "../assets/img-projects/truckerp.jpg";
+import credoraImg from "../assets/img-projects/credora.jpg";
+import kolosalImg from "../assets/img-projects/kolosal.jpg";
+import hawaiiImg from "../assets/img-projects/hawaii.jpg";
+import nazarethImg from "../assets/img-projects/nazareth.jpg";
 
 export const projects: Project[] = [
   {
+    title: "KreaZcy → Truck Maintenance ERP",
+    description:
+      "KreaZcy is an in-house, use-case-agnostic microservices engine in Go (15+ composable services with domain-driven design, CQRS read models, Backend-for-Frontend, and Temporal saga orchestration) that ArachnoVa assembles new client products from. Pictured is one live product built on it: a multi-role fleet Truck Maintenance ERP for drivers, foremen, the workshop, and owners, with a repair kanban, role-based dashboards, and spare-part demand forecasting.",
+    image: truckErpImg.src,
+    technologies: ["Go", "Microservices", "Temporal", "CQRS", "React", "Docker"],
+    demo: "https://truck-maintenance.izcy.tech",
+    code: "https://github.com/grandiv",
+    category: "backend",
+  },
+  {
+    title: "Credora - On-Chain Reputation Arena for AI Trading Agents",
+    description:
+      "A Web3 competition arena on Mantle (an Ethereum Layer 2) where AI trading agents commit each decision publicly before the outcome is known, earning a transparent, tamper-proof Credora Score recorded on-chain. I built the backend that imports strategy track records, computes the score, and serves the frontend. Built at The Turing Test Hackathon 2026.",
+    image: credoraImg.src,
+    technologies: ["Web3", "Mantle", "Solidity", "Node.js", "Vercel"],
+    demo: "https://credora-turing.vercel.app",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
+  },
+  {
+    title: "Kolosal Perfect Score - AI-Personalized ACT Test Engine",
+    description:
+      "AI test-prep platform that converts real past ACT material into an endless supply of personalized, exam-grade practice papers. I built the generation engine (FastAPI, Redis job queue, Supabase) with challenge, targeted weak-area, and randomized modes, a LaTeX-to-PDF rendering pipeline, and vision-based extraction that turns scanned source tests into structured question banks. Remote, for Kolosal (Newark, Delaware, US).",
+    image: kolosalImg.src,
+    technologies: ["FastAPI", "Python", "Machine Learning", "Redis", "Supabase", "Encore.ts"],
+    demo: "https://www.perfectscoreact.com/",
+    code: "https://github.com/grandiv",
+    category: "backend",
+  },
+  {
+    title: "NazarETH - On-Chain Fitness Commitment Protocol",
+    description:
+      "A Web3 accountability protocol on Base where athletes stake USDC against verifiable fitness goals — hit the target to earn it back, miss it and forfeit the unearned portion. Built for Base Batches 003 (Student Track).",
+    image: nazarethImg.src,
+    technologies: ["Web3", "Base", "Solidity", "USDC", "React"],
+    demo: "https://nazareth.izcy.tech",
+    code: "https://github.com/grandiv",
+    category: "fullstack",
+  },
+  {
+    title: "Hawaii Deep-Sea Fishing - Charter Booking Platform",
+    description:
+      "A booking and content platform for a deep-sea fishing-charter operator across Oahu, Maui, Kona, and Kauai — built to turn casual browsers into confident bookings with verified reviews, transparent pricing, and instant confirmation. A design-led, conversion-focused build for a real client.",
+    image: hawaiiImg.src,
+    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    demo: "https://hawaiideepsea.nozaracy.com",
+    code: "https://github.com/grandiv",
+    category: "frontend",
+  },
+  {
     title: "RoeTix - Event Ticketing Platform for Rumah Orkestra Jogja",
     description:
-      "9-service microservices platform using Go and Node.js for high-traffic event ticketing. Features CI/CD with GitHub Actions, Docker, Watchtower achieving zero-downtime deployments. Maintains 99.9% uptime with 1,000+ concurrent users.",
+      "9-service microservices platform using Go and Node.js for high-traffic event ticketing, now powering 20+ clients across concert and competition events in multiple cities. Features CI/CD with GitHub Actions, Docker, Watchtower achieving zero-downtime deployments. Maintains 99.9% uptime with 1,000+ concurrent users.",
     image: roetixImg.src,
     technologies: ["Go", "Node.js", "Redis", "Kafka", "Docker", "Nginx"],
     demo: "https://roetix.com",

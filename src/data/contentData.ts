@@ -16,13 +16,19 @@ export const siteContent: SiteContent = {
 
   hero: {
     greeting: "Hello! I'm available for new opportunities!",
-    titles: ["Backend Engineer", "Full Stack Developer", "DevOps Engineer", "Software Architect"],
+    titles: [
+      "CTO @ ArachnoVa",
+      "Backend Engineer",
+      "Full Stack Developer",
+      "Software Architect",
+      "Web3 & ML Engineer",
+    ],
   },
 
   about: {
     name: "Muhammad Grandiv Lava Putra",
-    location: "Yogyakarta, Indonesia",
-    role: "Full-Stack Software Developer & Backend Engineer",
+    location: "Bogor, Indonesia",
+    role: "Chief Technology Officer & Software Engineer",
     focus: ["microservices architecture", "system design", "DevOps engineering"],
     technologies: [
       "Go",
@@ -35,15 +41,15 @@ export const siteContent: SiteContent = {
       "Redis",
       "Kafka",
       "Docker",
-      "Kubernetes",
       "CI/CD",
       "Nginx",
-      "Microservices",
+      "Solidity",
+      "Machine Learning",
     ],
     bio: [
-      "I'm a Full-Stack Software Developer and Backend Engineer currently pursuing a Bachelor of Science in Information Technology at Gadjah Mada University (Expected 2026), with comprehensive coursework in Software Engineering, Data Engineering, Web Development, AI, Database Technology, and Data Structures & Algorithms.",
-      "I specialize in architecting scalable microservices platforms using Go and Node.js, with expertise in system design, CI/CD automation, and DevOps practices. My recent work includes building high-traffic event ticketing systems handling 1,000+ concurrent users with 99.9% uptime, implementing distributed systems with Redis, Kafka, and WebSocket, and achieving 82.75% test coverage across enterprise applications.",
-      "I'm passionate about building robust, production-ready systems with comprehensive documentation, automated testing, and modern development practices. I continuously seek to advance my skills in scalable architecture, cloud infrastructure, and emerging technologies.",
+      "I'm the Chief Technology Officer of ArachnoVa, a software house, where I lead a small engineering team to ideate, build, and operate production platforms for real clients. I'm also a final-year S1 Information Technology student at Universitas Gadjah Mada (expected 2026), and ArachnoVa was selected as a Startup Grant 2026 recipient by Innovative Academy UGM.",
+      "I architect scalable microservices systems in Go and Node.js — including KreaZcy, an in-house engine of 15+ composable services that new client products are assembled from. My work spans high-traffic ticketing (RoeTix, now powering 20+ clients across cities with 99.9% uptime), applied AI/ML (Kolosal Perfect Score), and Web3 (Credora on Mantle, NazarETH on Base).",
+      "My undergraduate thesis, \"Hybrid Trust Architecture for Agentic AI: Integrating Verifiable Credentials and Soulbound Tokens,\" is planned for publication at ICSCSS 2027 (ACM). I care about robust, production-ready systems — comprehensive documentation, automated testing, and design-led, human-centered product craft.",
     ],
     photoAlt: "Photo of Muhammad Grandiv Lava Putra",
   },
@@ -52,7 +58,7 @@ export const siteContent: SiteContent = {
     email: "grandivfarand@gmail.com",
     links: [
       {
-        href: "https://www.linkedin.com/in/muhammad-grandiv-lava-putra-364b0324b/",
+        href: "https://www.linkedin.com/in/grandiv/",
         label: "LinkedIn",
       },
       { href: "https://github.com/grandiv", label: "GitHub" },

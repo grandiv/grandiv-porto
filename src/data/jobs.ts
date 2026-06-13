@@ -2,15 +2,36 @@ import type { Job } from "../types";
 
 export const jobs: Job[] = [
   {
-    title: "Backend Engineer - RoeTix Ticketing Platform (ArachnoVa)",
+    title: "Chief Technology Officer - ArachnoVa",
+    time: ["2025 - Present"],
+    description:
+      "Lead a small engineering team at a software house, setting technical direction across ideation, architecture, delivery, and infrastructure for the entire client product portfolio.",
+    list: [
+      "Architected KreaZcy, an in-house, use-case-agnostic microservices engine in Go — 15+ composable services on shared libraries for domain-driven design, CQRS read models, Backend-for-Frontend, and Temporal saga orchestration — from which new client products are assembled rather than rebuilt",
+      "Lead a team of three engineers and own the self-managed VPS infrastructure (CI/CD, Nginx, SSL/TLS, monitoring, zero-downtime deployment) behind products including RoeTix, the Truck Maintenance ERP, Villa Yutaka, and Hawaii Deep-Sea Fishing",
+      "ArachnoVa was selected as a Startup Grant 2026 recipient by Innovative Academy, Universitas Gadjah Mada",
+    ],
+  },
+  {
+    title: "Backend & Infrastructure Lead - RoeTix Ticketing Platform (ArachnoVa)",
     time: ["Dec 2025 - Present"],
     description:
-      "Architecting 9-service microservices platform using Go and Node.js for high-traffic event ticketing at Rumah Orkestra Jogja.",
+      "Architecting a 9-service microservices platform using Go and Node.js for high-traffic event ticketing at Rumah Orkestra Jogja, now powering 20+ clients across concert and competition events in multiple cities.",
     list: [
       "Implementing CI/CD pipelines with GitHub Actions, Docker, and Watchtower achieving zero-downtime deployments with automated health checks and rollback capabilities, reducing deployment time by 70%",
       "Managing production infrastructure with Nginx load balancing, API gateway, SSL/TLS automation, maintaining 99.9% uptime during peak ticket sale events with 1,000+ concurrent users",
       "Building distributed system with Redis, Kafka, REST, Webhook, WebSocket to reduce server overload incidents by 85% through rate limiting, queueing, idempotency, and circuit breaker patterns",
-      "Establishing comprehensive technical documentation including deployment runbooks, incident response procedures, and API specifications",
+      "Serving 20+ medium-to-large-scale clients across cities with comprehensive technical documentation, deployment runbooks, and incident response procedures",
+    ],
+  },
+  {
+    title: "Backend & ML Engineer - Kolosal Perfect Score",
+    time: ["Dec 2025 - Present"],
+    description:
+      "Building the AI test-generation backend for Kolosal Perfect Score (Newark, Delaware, US; remote), an AI-personalized ACT test-prep platform.",
+    list: [
+      "Built a personalized test-generation engine (FastAPI, Redis job queue, Supabase) with challenge, targeted weak-area, and randomized modes, plus a LaTeX-to-PDF pipeline producing exam-grade papers",
+      "Engineered vision-based extraction to convert scanned source exams into structured question banks, served through a type-safe Encore.ts API with JWT authentication and Redis caching",
     ],
   },
   {

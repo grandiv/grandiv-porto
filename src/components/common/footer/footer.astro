@@ -3,6 +3,13 @@ import SocialIcons from "../social/SocialIcons.jsx";
 import { siteContent } from "../../../data/contentData";
 
 const { navigation, footer } = siteContent;
+
+// Build-time date — reflects when the site was last edited/deployed.
+const lastUpdated = new Date().toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 ---
 
 <footer class="bg-gray-950 text-white">
@@ -43,8 +50,9 @@ const { navigation, footer } = siteContent;
 
   <!-- Copyright -->
   <div
-    class="w-full border-t border-gray-600 py-10 text-center text-sm text-gray-500"
+    class="flex w-full flex-col items-center gap-1 border-t border-gray-600 py-10 text-center text-sm text-gray-500"
   >
-    {footer.copyright}
+    <span>{footer.copyright}</span>
+    <span class="text-xs text-gray-400">Last updated {lastUpdated}</span>
   </div>
 </footer>

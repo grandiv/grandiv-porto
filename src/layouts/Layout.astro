@@ -2,16 +2,58 @@
 import "../styles/global.css";
 import Navbar from "../components/common/navbar/navbar.astro";
 import Footer from "../components/common/footer/footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const DEFAULT_DESCRIPTION =
+  "Muhammad Grandiv Lava Putra — Chief Technology Officer at ArachnoVa and software engineer. Building scalable microservices, AI, and Web3 products including RoeTix, KreaZcy, Credora, and Kolosal Perfect Score.";
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title
+  ? `${title} · Muhammad Grandiv Lava Putra`
+  : "Muhammad Grandiv Lava Putra — CTO & Software Engineer";
+
+const canonical = new URL(
+  Astro.url.pathname,
+  Astro.site ?? "https://www.grandiv.biz.id"
+).href;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Grandiv</title>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Muhammad Grandiv Lava Putra" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Grandiv Putra" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class="bg-gray-950 text-white">
     <Navbar />
