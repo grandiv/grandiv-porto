@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description:
       "A polished booking and content platform for a deep-sea fishing-charter operator across four Hawaiian islands, focused on craft, trust, and conversion.",
     image: hawaiiImg.src,
-    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    technologies: ["WordPress", "PHP", "Tailwind CSS", "Vite", "TypeScript"],
     demo: "https://hawaiideepsea.nozaracy.com",
     code: "https://github.com/grandiv",
   },

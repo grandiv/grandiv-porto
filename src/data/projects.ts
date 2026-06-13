@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description:
       "A booking and content platform for a deep-sea fishing-charter operator across Oahu, Maui, Kona, and Kauai — built to turn casual browsers into confident bookings with verified reviews, transparent pricing, and instant confirmation. A design-led, conversion-focused build for a real client.",
     image: hawaiiImg.src,
-    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    technologies: ["WordPress", "PHP", "Tailwind CSS", "Vite", "TypeScript"],
     demo: "https://hawaiideepsea.nozaracy.com",
     code: "https://github.com/grandiv",
     category: "frontend",

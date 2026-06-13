@@ -27,7 +27,7 @@ export const siteContent: SiteContent = {
 
   about: {
     name: "Muhammad Grandiv Lava Putra",
-    location: "Bogor, Indonesia",
+    location: "Yogyakarta, Indonesia",
     role: "Chief Technology Officer & Software Engineer",
     focus: ["microservices architecture", "system design", "DevOps engineering"],
     technologies: [
@@ -41,8 +41,10 @@ export const siteContent: SiteContent = {
       "Redis",
       "Kafka",
       "Docker",
+      "Kubernetes",
       "CI/CD",
       "Nginx",
+      "Microservices",
       "Solidity",
       "Machine Learning",
     ],
